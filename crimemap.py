@@ -1,8 +1,11 @@
-from dbhelper import DBHelper
 from flask import Flask
 from flask import render_template
 from flask import request
-
+import dbconfig
+if dbconfig.test:
+    from mockdbhelper import MockDBHelper as DBHelper
+else:
+    from dbhelper import DBHelper
 
 app = Flask(__name__)    # initializing our application
 DB = DBHelper()    # create a global DBHelper instance right after initializing our app
