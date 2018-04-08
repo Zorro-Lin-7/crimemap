@@ -4,9 +4,7 @@ class MockDBHelper(object):
         pass
         
     def add_crime(self, category, date, latitude, longitude, description):
-        data = [category, date, latitude, longitude, description]
-        for i in data:
-            print(i, type(i))
+        pass
             
     def get_all_inputs(self):
         return []
@@ -16,3 +14,10 @@ class MockDBHelper(object):
         
     def clear_all(self):
         pass
+        
+    def get_all_crimes(self):
+        return [{'latitude': -33.301304,
+                 'longitude': 26.523355,
+                 'date': '2000-01-01',
+                 'category': 'mugging',
+                 'description': 'mock description'}]
